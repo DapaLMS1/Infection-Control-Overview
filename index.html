@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infection Control in the Dental Practice</title>
+    <!-- This HTML file provides a learning activity for apprentice dental assistants on infection control. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #F2F2F2;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        header {
+            background-color: #532A8C;
+            color: #ffffff;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+        main {
+            padding: 20px;
+        }
+        h2 {
+            color: #532A8C;
+            border-bottom: 2px solid #9D8ABB;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            font-weight: 700;
+        }
+        h3 {
+            color: #532A8C;
+            margin-top: 0;
+            font-weight: 700;
+        }
+        h4 {
+            color: #532A8C;
+            border-bottom: 1px solid #C3ACE8;
+            padding-bottom: 3px;
+            font-weight: 700;
+        }
+        ol, ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        
+        /* Interactive Content Styles */
+        .practice-map {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #F2F2F2;
+            border-radius: 8px;
+        }
+        .map-zone {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1em;
+            color: #532A8C;
+            background-color: #fff;
+            border: 2px solid #C3ACE8;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .map-zone:hover {
+            background-color: #e9e4f0;
+        }
+       
+        .content-panel {
+            display: none;
+            padding: 20px;
+            margin-top: 20px;
+            animation: fadeIn 0.5s;
+        }
+        .content-panel.active {
+            display: block;
+        }
+
+        .sub-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .sub-tab {
+            padding: 10px 15px;
+            background-color: #F2F2F2;
+            border: 1px solid #C3ACE8;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+        .sub-tab:hover {
+            background-color: #e9e4f0;
+        }
+        .sub-tab.active {
+            background-color: #9D8ABB;
+            color: white;
+            border-color: #9D8ABB;
+        }
+        .sub-content-panel {
+            display: none;
+            padding: 15px;
+            border-left: 5px solid #7ABF49;
+            background-color: #fff;
+            border-radius: 0 5px 5px 0;
+        }
+        .sub-content-panel.active {
+            display: block;
+        }
+        .back-button {
+            background-color: #7ABF49;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #96BF78;
+        }
+
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Infection Control Overview</h1>
+        </header>
+
+        <main>
+            <section id="introduction">
+                <h2>Your Role in Infection Prevention and Control</h2>
+                <p>As an Apprentice Dental Assistant, you have a fundamental role in preventing the spread of infection within the dental practice. Upholding high standards of infection control is essential for the safety of patients and the entire dental team. This guide outlines the key areas of the practice where you must apply correct infection prevention and control principles, in line with national standards.</p>
+            </section>
+
+            <section id="interactive-content">
+                <h2>Interactive Practice Map: Key Zones</h2>
+                <p id="map-instruction">Click on a zone in the map below to reveal the specific infection control responsibilities for that area.</p>
+
+                <div class="practice-map">
+                    <div class="map-zone" data-target="clinical-content">1. Clinical Room</div>
+                    <div class="map-zone" data-target="reprocessing-content">2. Reprocessing Area</div>
+                    <div class="map-zone" data-target="reception-content">3. Reception Area</div>
+                </div>
+
+                <div class="content-panels">
+                    <!-- Clinical Room Content -->
+                    <div id="clinical-content" class="content-panel">
+                        <button class="back-button">← Back to Main Zones</button>
+                        <h3>The Clinical Treatment Room (Surgery)</h3>
+                        <p>This area requires meticulous processes between each patient. Select a sub-category below for detailed steps.</p>
+                        <div class="sub-tabs">
+                            <div class="sub-tab" data-target="chair-details">Dental Chair</div>
+                            <div class="sub-tab" data-target="surfaces-details">Surfaces &amp; Drawers</div>
+                            <div class="sub-tab" data-target="waste-details">Waste Management</div>
+                            <div class="sub-tab" data-target="tech-details">Technology</div>
+                        </div>
+                        <div class="sub-content-panels">
+                            <div id="chair-details" class="sub-content-panel">
+                                <h4>Process: Between-Patient Chair &amp; Lamp Disinfection</h4>
+                                <ol>
+                                    <li><strong>Wear PPE:</strong> Put on utility gloves, mask, and protective eyewear.</li>
+                                    <li><strong>Clean First:</strong> Use a TGA-approved detergent wipe to physically clean all surfaces. Start with the overhead lamp (handles, switches, shield), then move to the chair itself, cleaning from least contaminated areas (e.g., armrests) to most contaminated (e.g., headrest, backrest). Ensure all visible debris is removed.</li>
+                                    <li><strong>Disinfect Second:</strong> Use a TGA-approved hospital-grade disinfectant wipe. Thoroughly wipe all cleaned surfaces again, ensuring the surface remains wet for the contact time specified by the manufacturer.</li>
+                                    <li><strong>Dry:</strong> Allow surfaces to air dry completely. Do not wipe them dry.</li>
+                                    <li><strong>Place Barriers:</strong> Once dry, place fresh, single-use barriers on high-touch areas like the lamp handles, switches, headrest, and chair control buttons.</li>
+                                </ol>
+                            </div>
+                            <div id="surfaces-details" class="sub-content-panel">
+                                <h4>Process: Cleaning Surfaces and Drawers</h4>
+                                <ol>
+                                    <li><strong>Identify Clinical Contact Surfaces:</strong> This includes the bracket table, countertops, and drawer handles.</li>
+                                    <li><strong>Clean and Disinfect:</strong> Using the same 'clean then disinfect' principle as the chair, work systematically across all surfaces. Pay close attention to drawer handles and the edges of countertops.</li>
+                                    <li><strong>Manage Drawers:</strong> Avoid opening drawers with contaminated gloves. Use cotton pliers or over-gloves if you must access items during treatment. Regularly audit and clean the inside of drawers as per practice policy.</li>
+                                </ol>
+                            </div>
+                            <div id="waste-details" class="sub-content-panel">
+                                <h4>Process: Waste Segregation</h4>
+                                <ul>
+                                    <li><strong>Sharps Waste:</strong> Immediately dispose of all used needles, blades, and anaesthetic cartridges into a puncture-resistant sharps container located at the point of use. Never overfill the container.</li>
+                                    <li><strong>Contaminated (Clinical) Waste:</strong> Place items visibly soiled with blood or saliva (gauze, cotton rolls) into a biohazard-lined bin. Securely tie the bag when it is three-quarters full.</li>
+                                    <li><strong>General Waste:</strong> Non-contaminated items like paper packaging can go into the general waste bin.</li>
+                                </ul>
+                            </div>
+                             <div id="tech-details" class="sub-content-panel">
+                                <h4>Process: Cleaning Clinical Technology</h4>
+                                <p>Keyboards, mice, and monitors are high-touch surfaces that can harbour pathogens. They require careful cleaning to prevent damage.</p>
+                                <ul>
+                                    <li><strong>Keyboard:</strong> If a waterproof, washable keyboard is not used, a protective barrier must be placed over it and changed between patients. To clean, disconnect the keyboard, turn it upside down to dislodge debris, and wipe all surfaces with a TGA-approved disinfectant wipe suitable for electronics.</li>
+                                    <li><strong>Mouse:</strong> The mouse must be covered with a single-use barrier that is changed between patients. After removing the barrier, wipe the entire surface with a TGA-approved disinfectant wipe suitable for electronics.</li>
+                                    <li><strong>Monitor:</strong> Use a screen-safe cleaning wipe or a soft, lint-free cloth lightly dampened with a recommended screen cleaner. Avoid spraying liquid directly onto the screen. If it is a touch screen, it must be barrier-protected and disinfected between patients.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reprocessing Area Content -->
+                    <div id="reprocessing-content" class="content-panel">
+                         <button class="back-button">← Back to Main Zones</button>
+                        <h3>The Instrument Reprocessing Area</h3>
+                        <p>This area follows a strict unidirectional workflow. Select a stage to see the detailed process.</p>
+                        <div class="sub-tabs">
+                            <div class="sub-tab" data-target="cleaning-details">Cleaning (Dirty Zone)</div>
+                            <div class="sub-tab" data-target="packaging-details">Packaging (Clean Zone)</div>
+                            <div class="sub-tab" data-target="sterilisation-details">Sterilisation & Storage</div>
+                        </div>
+                         <div class="sub-content-panels">
+                            <div id="cleaning-details" class="sub-content-panel">
+                                <h4>Process: Instrument Cleaning</h4>
+                                <ol>
+                                    <li><strong>Wear Heavy-Duty PPE:</strong> This includes utility gloves, a fluid-resistant gown, a mask, and a face shield.</li>
+                                    <li><strong>Manual or Mechanical Cleaning:</strong> If cleaning manually, fully immerse instruments in a TGA-approved detergent solution and scrub below the waterline to prevent aerosols. Alternatively, place instruments in a cassette and process through an ultrasonic cleaner or thermal washer-disinfector.</li>
+                                    <li><strong>Rinse and Dry:</strong> Thoroughly rinse all instruments with running water and dry them completely using a lint-free cloth or a drying cabinet.</li>
+                                    <li><strong>Inspect:</strong> Carefully inspect each instrument for any remaining debris or damage. If not clean, repeat the process.</li>
+                                </ol>
+                            </div>
+                            <div id="packaging-details" class="sub-content-panel">
+                                <h4>Process: Instrument Packaging</h4>
+                                <ol>
+                                    <li><strong>Choose Correct Pouch Size:</strong> Select a pouch that allows the instrument to fit without being cramped, but is not excessively large.</li>
+                                    <li><strong>Insert Instrument & Indicator:</strong> Place the clean, dry instrument into the pouch. Add an internal chemical indicator to verify sterilant penetration.</li>
+                                    <li><strong>Seal Securely:</strong> For self-sealing pouches, ensure a complete, wrinkle-free seal. For heat-sealed pouches, follow the manufacturer's instructions for the correct temperature and pressure.</li>
+                                    <li><strong>Label the Pouch:</strong> Label each pouch with the steriliser number, cycle number, and date of sterilisation.</li>
+                                </ol>
+                            </div>
+                            <div id="sterilisation-details" class="sub-content-panel">
+                                <h4>Process: Sterilisation Cycle and Storage</h4>
+                                <ol>
+                                    <li><strong>Load the Steriliser (Autoclave):</strong> Place pouches on their edge in racks, separating paper from plastic to allow steam circulation. Do not overload the chamber.</li>
+                                    <li><strong>Run Cycle:</strong> Select the appropriate cycle for the load and start the steriliser.</li>
+                                    <li><strong>Verify and Document:</strong> At the end of the cycle, verify the physical parameters (time, temperature, pressure) have been met. Check that the external chemical indicator has changed colour. Record the cycle details in the sterilisation log.</li>
+                                    <li><strong>Store Correctly:</strong> Once cooled and dried, store sterile packs in a clean, dry, enclosed area, away from potential contamination.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reception Area Content -->
+                    <div id="reception-content" class="content-panel">
+                        <button class="back-button">← Back to Main Zones</button>
+                        <h3>Reception and Waiting Area</h3>
+                        <p>Maintaining a clean and safe environment for arriving patients is crucial. Select a task for more information.</p>
+                         <div class="sub-tabs">
+                            <div class="sub-tab" data-target="surfaces-reception-details">High-Touch Surfaces</div>
+                            <div class="sub-tab" data-target="amenities-details">Patient Amenities</div>
+                            <div class="sub-tab" data-target="illness-details">Managing Illness</div>
+                        </div>
+                        <div class="sub-content-panels">
+                            <div id="surfaces-reception-details" class="sub-content-panel">
+                                <h4>Process: Routine Surface Cleaning</h4>
+                                <p>A schedule should be in place for regularly cleaning high-touch surfaces throughout the day.</p>
+                                <ul>
+                                    <li><strong>Checklist:</strong> Door handles, reception counters, pens, EFTPOS terminals, and armrests on chairs.</li>
+                                    <li><strong>Method:</strong> Use a general-purpose detergent wipe or solution to clean these surfaces. A disinfectant may be used as per practice policy, especially during periods of high community illness.</li>
+                                </ul>
+                            </div>
+                            <div id="amenities-details" class="sub-content-panel">
+                                <h4>Process: Managing Amenities</h4>
+                                <ul>
+                                    <li><strong>Hand Sanitiser:</strong> Ensure alcohol-based hand rub is available and clearly visible for patient use upon entry. Check and refill the dispenser regularly.</li>
+                                    <li><strong>Reading Materials/Toys:</strong> These items are difficult to clean effectively. It is best practice to remove them. If kept, they must be part of a regular cleaning schedule.</li>
+                                    <li><strong>Signage:</strong> Display posters promoting respiratory hygiene ('catch it, bin it, kill it') and hand hygiene.</li>
+                                </ul>
+                            </div>
+                            <div id="illness-details" class="sub-content-panel">
+                                <h4>Process: Identifying and Managing Ill Patients</h4>
+                                <ul>
+                                    <li><strong>Screening:</strong> Reception staff should be trained to politely ask screening questions if a patient presents with obvious symptoms of a respiratory illness (e.g., coughing).</li>
+                                    <li><strong>Reschedule:</strong> If a patient is unwell, it is safest for them, other patients, and staff to reschedule their non-emergency appointment.</li>
+                                    <li><strong>Isolation:</strong> If an unwell patient must be seen, they should be asked to wear a mask, perform hand hygiene, and be moved to an empty surgery or isolated area as quickly as possible.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    </div>
+    <script>
+        const mapZones = document.querySelectorAll('.map-zone');
+        const contentPanels = document.querySelectorAll('.content-panel');
+        const backButtons = document.querySelectorAll('.back-button');
+        const practiceMap = document.querySelector('.practice-map');
+        const mapInstruction = document.querySelector('#map-instruction');
+
+        // Main zone selection
+        mapZones.forEach(zone => {
+            zone.addEventListener('click', () => {
+                const targetId = zone.dataset.target;
+                const targetPanel = document.getElementById(targetId);
+
+                practiceMap.style.display = 'none';
+                mapInstruction.style.display = 'none';
+                
+                if (targetPanel) {
+                    targetPanel.classList.add('active');
+                    // Automatically select the first sub-tab in the opened panel
+                    const firstSubTab = targetPanel.querySelector('.sub-tab');
+                    if(firstSubTab) {
+                        firstSubTab.click();
+                    }
+                }
+            });
+        });
+
+        // Back button functionality
+        backButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                contentPanels.forEach(p => p.classList.remove('active'));
+                practiceMap.style.display = 'flex';
+                mapInstruction.style.display = 'block';
+            });
+        });
+
+        // Sub-tab functionality within each content panel
+        const allSubTabs = document.querySelectorAll('.sub-tab');
+        allSubTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetId = tab.dataset.target;
+                const targetPanel = document.getElementById(targetId);
+
+                // Scope the query for tabs and panels to the current main content area
+                const parentContentPanel = tab.closest('.content-panel');
+                const siblingTabs = parentContentPanel.querySelectorAll('.sub-tab');
+                const siblingPanels = parentContentPanel.querySelectorAll('.sub-content-panel');
+
+                siblingTabs.forEach(t => t.classList.remove('active'));
+                siblingPanels.forEach(p => p.classList.remove('active'));
+
+                tab.classList.add('active');
+                if (targetPanel) {
+                    targetPanel.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
